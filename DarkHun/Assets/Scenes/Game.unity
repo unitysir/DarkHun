@@ -397,7 +397,7 @@ MonoBehaviour:
   keyLeft: 97
   keyRight: 100
   keyA: 304
-  keyB: 0
+  keyB: 32
   keyC: 0
   keyD: 0
   Dup: 0
@@ -405,6 +405,7 @@ MonoBehaviour:
   Dmag: 0
   Dvec: {x: 0, y: 0, z: 0}
   isRun: 0
+  jump: 0
   inputEnable: 1
 --- !u!54 &711335456
 Rigidbody:

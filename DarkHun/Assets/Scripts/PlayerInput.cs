@@ -18,6 +18,7 @@
 using UnityEngine;
 
 public class PlayerInput : MonoBehaviour {
+
     #region Definition
     [Header("== Key Setting ==")]
     #region public
@@ -28,8 +29,14 @@ public class PlayerInput : MonoBehaviour {
     public KeyCode keyRight = KeyCode.D;
 
     //技能键
+    /// <summary>
+    /// 跑步
+    /// </summary>
     public KeyCode keyA = KeyCode.LeftShift;
-    public KeyCode keyB;
+    /// <summary>
+    /// 跳跃
+    /// </summary>
+    public KeyCode keyB = KeyCode.Space;
     public KeyCode keyC;
     public KeyCode keyD;
 
@@ -47,7 +54,10 @@ public class PlayerInput : MonoBehaviour {
     /// </summary>
     public Vector3 Dvec;
 
+    // ctrl
     public bool isRun;
+    public bool jump;
+    private bool lastJump;
 
     [Header("== Others ==")]
     //输入开关
@@ -72,7 +82,6 @@ public class PlayerInput : MonoBehaviour {
     }
 
     private void OnUpdate() {
-
         //增加输入开关
         if (!inputEnable) return;
 
@@ -99,14 +108,28 @@ public class PlayerInput : MonoBehaviour {
 
         //跑步
         isRun = Input.GetKey(keyA);
-
+        //跳跃
+        bool newJump = Input.GetKey(keyB);
+        // lastJump 初始值为 false ，如果 new不等于last  则 new=true
+        if (newJump != lastJump && newJump == true) {
+            jump = true;
+        } else {
+            jump = false;
+        }
+        lastJump = newJump;
     }
 
-   private Vector2 SquareToCircle(Vector2 input) {
+    /// <summary>
+    /// 方形坐标转圆形坐标
+    /// </summary>
+    /// <param name="input"></param>
+    /// <returns></returns>
+    private Vector2 SquareToCircle(Vector2 input) {
         Vector2 output = Vector2.zero;
 
-        output.x = input.x * Mathf.Sqrt(1 - input.y * input.y / 2);
-        output.y = input.y * Mathf.Sqrt(1 - input.x * input.x / 2);
+        // 根据公式
+        output.x = input.x * Mathf.Sqrt(1 - (input.y * input.y / 2));
+        output.y = input.y * Mathf.Sqrt(1 - (input.x * input.x / 2));
 
         return output;
     }

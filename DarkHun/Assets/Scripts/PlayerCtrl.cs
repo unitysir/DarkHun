@@ -44,8 +44,12 @@ public class PlayerCtrl : MonoBehaviour {
     private void OnUpdate() {
         //设置角色移动的动画
         animator.SetFloat("forward", pi.Dmag * Mathf.Lerp(animator.GetFloat("forward"), (pi.isRun ? 2f : 1f), 0.5f));
+
+        if (pi.jump) {
+            animator.SetTrigger("jump");
+        }
         //设置角色移动的方向
-        if (pi.Dmag > 0.1f) {
+        if (pi.Dmag > 0.1f) { // 当角色动画中的数值大于 0.1时 才让角色进行旋转
             playeModel.transform.forward = Vector3.Slerp(playeModel.transform.forward, pi.Dvec, 0.3f);
         }
         movingVec = pi.Dmag * playeModel.transform.forward * walkSpeed * (pi.isRun ? runSpeed : 1f);
