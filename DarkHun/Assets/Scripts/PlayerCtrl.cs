@@ -15,12 +15,14 @@
     ----------------------------
 --------------------------------
 *****************************************************/
+using DSFramework;
 using UnityEngine;
 
 public class PlayerCtrl : MonoBehaviour {
     public GameObject playeModel;
     public float walkSpeed = 1.4f;
     public float runSpeed = 2.7f;
+    public float jumpThrust = 3f;
 
     private PlayerInput pi;
     private Animator animator;
@@ -28,7 +30,13 @@ public class PlayerCtrl : MonoBehaviour {
     /// <summary>
     /// 移动的方向
     /// </summary>
-    private Vector3 movingVec;
+    private Vector3 planarVec;
+    /// <summary>
+    /// 冲量
+    /// </summary>
+    private Vector3 thrustVel;
+
+    private bool lockplanar = false;
 
     private void Awake() {
         pi = GetComponent<PlayerInput>();
@@ -37,8 +45,8 @@ public class PlayerCtrl : MonoBehaviour {
     }
 
     private void Start() {
-        MonoMgr.Instance.AddUpdate(OnUpdate);
-        MonoMgr.Instance.AddFixedUpdate(OnFixedUpdate);
+        DSMonoMgr.Instance.AddUpdateListener(OnUpdate);
+        DSMonoMgr.Instance.AddFixedUpdateListener(OnFixedUpdate);
     }
 
     private void OnUpdate() {
@@ -52,11 +60,29 @@ public class PlayerCtrl : MonoBehaviour {
         if (pi.Dmag > 0.1f) { // 当角色动画中的数值大于 0.1时 才让角色进行旋转
             playeModel.transform.forward = Vector3.Slerp(playeModel.transform.forward, pi.Dvec, 0.3f);
         }
-        movingVec = pi.Dmag * playeModel.transform.forward * walkSpeed * (pi.isRun ? runSpeed : 1f);
+
+        if (lockplanar==false) {
+            planarVec = pi.Dmag * playeModel.transform.forward * walkSpeed * (pi.isRun ? runSpeed : 1f);
+        }
     }
 
     private void OnFixedUpdate() {
         //rigi.position += movingVec * Time.fixedDeltaTime;
-        rigi.velocity = new Vector3(movingVec.x, rigi.velocity.y, movingVec.z);
+        rigi.velocity = new Vector3(planarVec.x, rigi.velocity.y, planarVec.z) + thrustVel;
+        thrustVel = Vector3.zero;
     }
+
+    public void OnJumpEnter() {
+        //print("OnJump......Enter");
+        pi.inputEnable = false;
+        lockplanar = true;
+        thrustVel = new Vector3(0, jumpThrust, 0);
+    }
+
+    public void OnJumpExit() {
+        //print("OnJump......Exit");
+        pi.inputEnable = true;
+        lockplanar = false;
+    }
+
 }

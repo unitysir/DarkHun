@@ -15,6 +15,7 @@
     ----------------------------
 --------------------------------
 *****************************************************/
+using DSFramework;
 using UnityEngine;
 
 public class PlayerInput : MonoBehaviour {
@@ -78,7 +79,7 @@ public class PlayerInput : MonoBehaviour {
     #endregion
 
     private void Start() {
-        MonoMgr.Instance.AddUpdate(OnUpdate);
+        DSMonoMgr.Instance.AddUpdateListener(OnUpdate);
     }
 
     private void OnUpdate() {

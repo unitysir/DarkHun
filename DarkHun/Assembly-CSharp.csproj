@@ -63,12 +63,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DSFramework\Base\Mono\DSMonoMgr.cs" />
+    <Compile Include="Assets\DSFramework\Base\Mono\MonoController.cs" />
+    <Compile Include="Assets\DSFramework\Base\Pool\DSPoolMgr.cs" />
+    <Compile Include="Assets\DSFramework\Base\SimpleMonoBehaviour\SimpleMonoBehaviour.cs" />
+    <Compile Include="Assets\DSFramework\Base\Single\DSingle.cs" />
+    <Compile Include="Assets\DSFramework\Base\Timer\DSTime.cs" />
+    <Compile Include="Assets\DSFramework\Base\UI\PanelMgr\DSBasePanel.cs" />
+    <Compile Include="Assets\DSFramework\Base\UI\PanelMgr\DSPanelMgr.cs" />
+    <Compile Include="Assets\DSFramework\Base\Util\Export\ExporterUtil.cs" />
+    <Compile Include="Assets\DSFramework\Base\Util\MenuItem\EditorUtil.cs" />
+    <Compile Include="Assets\DSFramework\ZExample\001打开面板\PanelTest.cs" />
+    <Compile Include="Assets\DSFramework\ZExample\001打开面板\PanelTestgo.cs" />
+    <Compile Include="Assets\DSFramework\ZExample\002缓存池测试\DelayPush.cs" />
+    <Compile Include="Assets\DSFramework\ZExample\002缓存池测试\PoolTest.cs" />
+    <Compile Include="Assets\DSFramework\ZExample\003简易定时器\TimerTest.cs" />
     <Compile Include="Assets\FSMClearSignals.cs" />
+    <Compile Include="Assets\FSMOnEnter.cs" />
+    <Compile Include="Assets\FSMOnExit.cs" />
     <Compile Include="Assets\Scripts\PlayerCtrl.cs" />
     <Compile Include="Assets\Scripts\PlayerInput.cs" />
-    <Compile Include="Assets\Scripts\Tools\Mono\MonoCtrl.cs" />
-    <Compile Include="Assets\Scripts\Tools\Mono\MonoMgr.cs" />
-    <Compile Include="Assets\Scripts\Tools\Single\Single.cs" />
     <Reference Include="UnityEngine">
       <HintPath>G:/zj_RestFile/File/UnityInstall/2019.4.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
