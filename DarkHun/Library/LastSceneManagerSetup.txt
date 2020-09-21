@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Game.unity
+- path: "Assets/DSFramework/Scenes/001\u7B80\u6613\u7F51\u7EDC\u540C\u6B65/001\u7B80\u6613\u7F51\u7EDC\u540C\u6B65.unity"
   isLoaded: 1
   isActive: 1
   isSubScene: 0

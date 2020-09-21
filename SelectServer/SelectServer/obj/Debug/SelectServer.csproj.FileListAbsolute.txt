@@ -1,0 +1,7 @@
+D:\zj_Programs\U3DFile\1\19\0Game\DarkHun\SelectServer\SelectServer\bin\Debug\SelectServer.exe.config
+D:\zj_Programs\U3DFile\1\19\0Game\DarkHun\SelectServer\SelectServer\bin\Debug\SelectServer.exe
+D:\zj_Programs\U3DFile\1\19\0Game\DarkHun\SelectServer\SelectServer\bin\Debug\SelectServer.pdb
+D:\zj_Programs\U3DFile\1\19\0Game\DarkHun\SelectServer\SelectServer\obj\Debug\SelectServer.csprojAssemblyReference.cache
+D:\zj_Programs\U3DFile\1\19\0Game\DarkHun\SelectServer\SelectServer\obj\Debug\SelectServer.csproj.CoreCompileInputs.cache
+D:\zj_Programs\U3DFile\1\19\0Game\DarkHun\SelectServer\SelectServer\obj\Debug\SelectServer.exe
+D:\zj_Programs\U3DFile\1\19\0Game\DarkHun\SelectServer\SelectServer\obj\Debug\SelectServer.pdb

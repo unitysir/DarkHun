@@ -72,7 +72,13 @@
     <Compile Include="Assets\DSFramework\Base\UI\PanelMgr\DSBasePanel.cs" />
     <Compile Include="Assets\DSFramework\Base\UI\PanelMgr\DSPanelMgr.cs" />
     <Compile Include="Assets\DSFramework\Base\Util\Export\ExporterUtil.cs" />
+    <Compile Include="Assets\DSFramework\Base\Util\Import\BacthImport.cs" />
     <Compile Include="Assets\DSFramework\Base\Util\MenuItem\EditorUtil.cs" />
+    <Compile Include="Assets\DSFramework\Scenes\001简易网络同步\Scripts\Human\BaseHuman.cs" />
+    <Compile Include="Assets\DSFramework\Scenes\001简易网络同步\Scripts\Human\CtrlHuman.cs" />
+    <Compile Include="Assets\DSFramework\Scenes\001简易网络同步\Scripts\Human\SyncHuman.cs" />
+    <Compile Include="Assets\DSFramework\Scenes\001简易网络同步\Scripts\Net\NetMain.cs" />
+    <Compile Include="Assets\DSFramework\Scenes\001简易网络同步\Scripts\Net\NetManager.cs" />
     <Compile Include="Assets\DSFramework\ZExample\001打开面板\PanelTest.cs" />
     <Compile Include="Assets\DSFramework\ZExample\001打开面板\PanelTestgo.cs" />
     <Compile Include="Assets\DSFramework\ZExample\002缓存池测试\DelayPush.cs" />
@@ -81,6 +87,7 @@
     <Compile Include="Assets\FSMClearSignals.cs" />
     <Compile Include="Assets\FSMOnEnter.cs" />
     <Compile Include="Assets\FSMOnExit.cs" />
+    <Compile Include="Assets\Scripts\OnGroundSensor.cs" />
     <Compile Include="Assets\Scripts\PlayerCtrl.cs" />
     <Compile Include="Assets\Scripts\PlayerInput.cs" />
     <Reference Include="UnityEngine">

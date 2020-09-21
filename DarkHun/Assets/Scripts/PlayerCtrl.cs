@@ -35,7 +35,9 @@ public class PlayerCtrl : MonoBehaviour {
     /// 冲量
     /// </summary>
     private Vector3 thrustVel;
-
+    /// <summary>
+    /// 是否锁定移动
+    /// </summary>
     private bool lockplanar = false;
 
     private void Awake() {
@@ -60,7 +62,7 @@ public class PlayerCtrl : MonoBehaviour {
         if (pi.Dmag > 0.1f) { // 当角色动画中的数值大于 0.1时 才让角色进行旋转
             playeModel.transform.forward = Vector3.Slerp(playeModel.transform.forward, pi.Dvec, 0.3f);
         }
-
+        // 不锁定移动 ， 反之锁定
         if (lockplanar==false) {
             planarVec = pi.Dmag * playeModel.transform.forward * walkSpeed * (pi.isRun ? runSpeed : 1f);
         }
@@ -72,15 +74,28 @@ public class PlayerCtrl : MonoBehaviour {
         thrustVel = Vector3.zero;
     }
 
+
+
+
+    ///////////////////////////////////////
+
+    public void IsGround() {
+        animator.SetBool("isGround", true);
+    }
+
+    public void IsNotGround() {
+        animator.SetBool("isGround", false);
+    }
+
+
+
     public void OnJumpEnter() {
-        //print("OnJump......Enter");
         pi.inputEnable = false;
         lockplanar = true;
         thrustVel = new Vector3(0, jumpThrust, 0);
     }
 
-    public void OnJumpExit() {
-        //print("OnJump......Exit");
+    public void OnGroundEnter() {
         pi.inputEnable = true;
         lockplanar = false;
     }

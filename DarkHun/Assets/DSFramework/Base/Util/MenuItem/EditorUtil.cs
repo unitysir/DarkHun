@@ -24,7 +24,7 @@ namespace DSFramework {
             AssetDatabase.ExportPackage(assetName, fileName, ExportPackageOptions.Recurse);
         }
 
-        [MenuItem("DSFramework/02.打开文件所在位置", false, 2)]
+        [MenuItem("DSFramework/03.打开文件所在位置", false, 3)]
         private static void MenuClicked() { EditorUtil.CallMenuItem(); }
 
     #endif
